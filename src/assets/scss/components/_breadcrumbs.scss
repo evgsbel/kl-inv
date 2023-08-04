@@ -1,0 +1,12 @@
+.breadcrumb {
+  margin-bottom: 30px;
+  padding: 0;
+  background-color: transparent;
+  &-item {
+    font-size: 12px;
+    &.active {
+      color: $orange;
+      text-decoration: underline;
+    }
+  }
+}

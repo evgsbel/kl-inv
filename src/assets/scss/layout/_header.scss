@@ -1,0 +1,150 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 100px;
+  background-color: #f5f5f5;
+  backdrop-filter: blur(20px);
+  @include r(768) {
+    height: 80px;
+  }
+  @include r(480) {
+    height: 60px;
+  }
+  //&.is-fixed {
+  //  position: fixed;
+  //}
+  &__logo {
+    svg {
+      max-width: 250px;
+    }
+  }
+  &__phone {
+    display: block;
+    text-align: right;
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: $orange;
+    @include r(1280) {
+      font-size: 16px;
+    }
+    @include r(1024) {
+      font-size: 20px;
+    }
+    @include r(576) {
+      font-size: 16px;
+    }
+    span {
+      font-weight: 300;
+      color: $green;
+    }
+    &:hover {
+      color: $orange;
+    }
+    &_nav {
+      display: none;
+      @include r(1024) {
+        display: block;
+      }
+    }
+  }
+}
+
+.nav {
+  @include r(1024) {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    padding: 30px;
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+    box-shadow: 0 4px 120px rgba(35, 44, 58, 0.10);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in-out;
+    &.is-open {
+      transform: translateX(0);
+    }
+  }
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    @include r(1280) {
+      justify-content: space-around;
+    }
+    @include r(1024) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 20px 0;
+    }
+  }
+  &__item {
+    position: relative;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    @include r(1280) {
+      font-size: 12px;
+    }
+    @include r(1024) {
+      font-size: 16px;
+    }
+    &.is-active::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 40px;
+      height: 3px;
+      background: linear-gradient(90deg, #F27B05 0%, rgba(242, 123, 5, 0.00) 100%);
+    }
+  }
+  &__close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    justify-content: flex-end;
+
+    svg {
+      flex: 0 0 auto;
+    }
+  }
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 36px;
+  height: 18px;
+  margin: 0 auto;
+  @include r(768) {
+    margin-left: auto;
+    margin-right: 0;
+  }
+  span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #000;
+    transition: width .3s ease-in-out;
+  }
+  &.is-active {
+    span:nth-child(2) {
+      width: 70%;
+    }
+    span:nth-child(3) {
+      width: 50%;
+    }
+  }
+}
+
+
