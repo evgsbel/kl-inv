@@ -458,6 +458,11 @@
     display: flex;
     align-items: center;
     gap: 0 60px;
+    @include r(576) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px 0;
+    }
   }
 }
 

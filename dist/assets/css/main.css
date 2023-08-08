@@ -11990,7 +11990,6 @@ ul {
   }
 }
 .header__phone span {
-  font-weight: 300;
   color: #03A447;
 }
 .header__phone:hover {
@@ -12993,6 +12992,18 @@ ul {
       -ms-flex-align: center;
           align-items: center;
   gap: 0 60px;
+}
+@media only screen and (max-width: 576px) {
+  .contacts-page__flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    gap: 20px 0;
+  }
 }
 
 .banner {
