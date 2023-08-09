@@ -111,14 +111,18 @@ $(() => {
   $(document).ready(function() {
     function checkWidth() {
       var windowWidth = $('body').innerWidth(),
-        elem = $(".sidebar "); // лучше сохранять объект в переменную, многократно чтобы не насиловать
-      // страницу для поиска нужного элемента
+        sidebar = $(".sidebar "),
+        subLink = $(".js-sub-link"),
+        subMenu = $(".js-sub-menu");
       if(windowWidth < 1025){
-        elem.removeClass('show');
-        // elem.addClass('col-xs-4');
+        sidebar.removeClass('show');
+        subMenu.addClass('collapse');
+        subLink.attr("data-toggle", "collapse")
       }
       else{
-        elem.addClass('show');
+        subLink.removeAttr("data-toggle")
+        sidebar.addClass('show');
+        subMenu.removeClass('collapse');
       }
     }
 
