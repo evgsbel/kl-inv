@@ -159,4 +159,31 @@
       }
     }
   }
+  &__info-link {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: underline;
+  }
+}
+
+.modal-dialog {
+  width: 900px;
+  max-width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.modal-body {
+  p {
+    margin-bottom: 20px;
+  }
+  ul {
+    max-width: 90%;
+    margin: 0 auto 20px;
+  }
+  li {
+    margin-bottom: 20px;
+    list-style: disc;
+  }
 }
